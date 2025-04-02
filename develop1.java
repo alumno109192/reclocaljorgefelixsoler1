@@ -1,22 +1,27 @@
 import java.util.Scanner;
 
-public class TablaMultiplicar {
+public class MediaTresNumeros {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        System.out.print("Ingrese un número para generar su tabla de multiplicar: ");
-        int numero = scanner.nextInt();
+        System.out.println("Ingrese el primer número:");
+        double num1 = scanner.nextDouble();
         
-        imprimirTablaMultiplicar(numero);
+        System.out.println("Ingrese el segundo número:");
+        double num2 = scanner.nextDouble();
+        
+        System.out.println("Ingrese el tercer número:");
+        double num3 = scanner.nextDouble();
+        
+        double media = calcularMedia(num1, num2, num3);
+        System.out.println("La media de los tres números es: " + media);
         
         scanner.close();
     }
 
-    public static void imprimirTablaMultiplicar(int numero) {
-        System.out.println("\nTabla de multiplicar del " + numero + ":");
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(numero + " x " + i + " = " + (numero * i));
-        }
+    // Función que calcula la media de tres números
+    public static double calcularMedia(double a, double b, double c) {
+        return (a + b + c) / 3;
     }
 }
